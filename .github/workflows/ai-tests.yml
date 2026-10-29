@@ -1,0 +1,100 @@
+name: AI feature tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+  # Weekly eval run: catches model drift on the provider's side, with no code change.
+  schedule:
+    - cron: "0 6 * * 1"
+
+concurrency:
+  group: ai-tests-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  BASE_URL: ${{ vars.BASE_URL || 'https://finance-app-nine-dusky.vercel.app' }}
+  AI_TEST_PASSWORD: ${{ secrets.AI_TEST_PASSWORD }}
+
+jobs:
+  # Deterministic checks: API contract and the UI with the model mocked. Every push and PR.
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - run: npx playwright install chromium
+      - name: Contract and UI tests
+        run: npx playwright test --project=contract --project=ui
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: checks-report
+          path: reports/playwright-report/
+          retention-days: 14
+
+  # Model quality against the datasets. The gate, not the red tests, decides the job.
+  # Weekly and manual only: evals make ~140 model calls on the same provider quota as the
+  # app's real users, so they don't run on every push.
+  evals:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    needs: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write # publish the eval report to gh-pages
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Evals and prompt-injection tests
+        id: evals
+        continue-on-error: true
+        run: npm run test:evals
+      - name: Eval gate
+        id: gate
+        if: always()
+        continue-on-error: true
+        run: npm run gate
+      - name: Build Pages site
+        if: always() && github.ref == 'refs/heads/master'
+        run: |
+          mkdir -p site
+          cp -r reports/evals/. site/
+          cp -r reports/playwright-report site/playwright-report
+          cp -r reports/playwright-report-insights site/playwright-report-insights
+      - name: Deploy to GitHub Pages
+        if: always() && github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: site
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-report
+          path: |
+            reports/evals/
+            reports/playwright-report/
+            reports/playwright-report-insights/
+          retention-days: 30
+      - name: Fail if the gate failed
+        if: steps.gate.outcome == 'failure'
+        run: exit 1

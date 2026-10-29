@@ -1,0 +1,810 @@
+{
+  "note": "Eval run of 2026-10-29 after the Groq free-tier quota was used up. Every answer below is the app's fallback (HTTP 200), not the model.",
+  "generatedAt": "2026-10-29 22:41 UTC",
+  "records": [
+    {
+      "suite": "insights",
+      "id": "en-run1",
+      "locale": "en",
+      "pass": false,
+      "input": {
+        "locale": "en"
+      },
+      "expected": {
+        "language": "en",
+        "numbersFrom": {
+          "money": [
+            1150,
+            650,
+            500,
+            3000,
+            1850,
+            2350,
+            150,
+            750,
+            120,
+            80,
+            200,
+            400,
+            1030,
+            1070,
+            950,
+            150,
+            150,
+            150,
+            120,
+            80,
+            300,
+            200,
+            450,
+            187.5,
+            120,
+            80,
+            200
+          ],
+          "percent": [
+            61.66666666666667,
+            30,
+            38.333333333333336,
+            65.21739130434783,
+            10.434782608695652,
+            6.956521739130435,
+            17.391304347826086,
+            25,
+            4,
+            2.666666666666667,
+            6.666666666666667
+          ]
+        }
+      },
+      "actual": {
+        "summary": "You've spent $1150.00 with a savings rate of 61.7%. Your spending increased by 30.0% this month.",
+        "trends": [
+          "Top spending category is foodDining",
+          "Significant increase in spending this month"
+        ],
+        "recommendations": [
+          "Review your top spending categories for optimization opportunities",
+          "Set monthly budgets for each category",
+          "Track expenses regularly to stay on target"
+        ],
+        "alerts": [],
+        "detectedLanguage": {
+          "language": "en",
+          "scores": {
+            "en": 11,
+            "pt": 0,
+            "es": 0,
+            "fr": 0
+          }
+        },
+        "untraced": []
+      },
+      "checks": {
+        "fallback": true,
+        "fallbackSeen": 3,
+        "language": true,
+        "structure": true,
+        "numbersStated": 3,
+        "numbersUntraced": 0
+      },
+      "retries": 0
+    },
+    {
+      "suite": "insights",
+      "id": "en-run2",
+      "locale": "en",
+      "pass": false,
+      "input": {
+        "locale": "en"
+      },
+      "expected": {
+        "language": "en",
+        "numbersFrom": {
+          "money": [
+            1150,
+            650,
+            500,
+            3000,
+            1850,
+            2350,
+            150,
+            750,
+            120,
+            80,
+            200,
+            400,
+            1030,
+            1070,
+            950,
+            150,
+            150,
+            150,
+            120,
+            80,
+            300,
+            200,
+            450,
+            187.5,
+            120,
+            80,
+            200
+          ],
+          "percent": [
+            61.66666666666667,
+            30,
+            38.333333333333336,
+            65.21739130434783,
+            10.434782608695652,
+            6.956521739130435,
+            17.391304347826086,
+            25,
+            4,
+            2.666666666666667,
+            6.666666666666667
+          ]
+        }
+      },
+      "actual": {
+        "summary": "You've spent $1150.00 with a savings rate of 61.7%. Your spending increased by 30.0% this month.",
+        "trends": [
+          "Top spending category is foodDining",
+          "Significant increase in spending this month"
+        ],
+        "recommendations": [
+          "Review your top spending categories for optimization opportunities",
+          "Set monthly budgets for each category",
+          "Track expenses regularly to stay on target"
+        ],
+        "alerts": [],
+        "detectedLanguage": {
+          "language": "en",
+          "scores": {
+            "en": 11,
+            "pt": 0,
+            "es": 0,
+            "fr": 0
+          }
+        },
+        "untraced": []
+      },
+      "checks": {
+        "fallback": true,
+        "fallbackSeen": 3,
+        "language": true,
+        "structure": true,
+        "numbersStated": 3,
+        "numbersUntraced": 0
+      },
+      "retries": 0
+    },
+    {
+      "suite": "insights",
+      "id": "es-run1",
+      "locale": "es",
+      "pass": false,
+      "input": {
+        "locale": "es"
+      },
+      "expected": {
+        "language": "es",
+        "numbersFrom": {
+          "money": [
+            1150,
+            650,
+            500,
+            3000,
+            1850,
+            2350,
+            150,
+            750,
+            120,
+            80,
+            200,
+            400,
+            1030,
+            1070,
+            950,
+            150,
+            150,
+            150,
+            120,
+            80,
+            300,
+            200,
+            450,
+            187.5,
+            120,
+            80,
+            200
+          ],
+          "percent": [
+            61.66666666666667,
+            30,
+            38.333333333333336,
+            65.21739130434783,
+            10.434782608695652,
+            6.956521739130435,
+            17.391304347826086,
+            25,
+            4,
+            2.666666666666667,
+            6.666666666666667
+          ]
+        }
+      },
+      "actual": {
+        "summary": "You've spent $1150.00 with a savings rate of 61.7%. Your spending increased by 30.0% this month.",
+        "trends": [
+          "Top spending category is foodDining",
+          "Significant increase in spending this month"
+        ],
+        "recommendations": [
+          "Review your top spending categories for optimization opportunities",
+          "Set monthly budgets for each category",
+          "Track expenses regularly to stay on target"
+        ],
+        "alerts": [],
+        "detectedLanguage": {
+          "language": "en",
+          "scores": {
+            "en": 11,
+            "pt": 0,
+            "es": 0,
+            "fr": 0
+          }
+        },
+        "untraced": []
+      },
+      "checks": {
+        "fallback": true,
+        "fallbackSeen": 3,
+        "language": false,
+        "structure": true,
+        "numbersStated": 3,
+        "numbersUntraced": 0
+      },
+      "retries": 0
+    },
+    {
+      "suite": "insights",
+      "id": "es-run2",
+      "locale": "es",
+      "pass": false,
+      "input": {
+        "locale": "es"
+      },
+      "expected": {
+        "language": "es",
+        "numbersFrom": {
+          "money": [
+            1150,
+            650,
+            500,
+            3000,
+            1850,
+            2350,
+            150,
+            750,
+            120,
+            80,
+            200,
+            400,
+            1030,
+            1070,
+            950,
+            150,
+            150,
+            150,
+            120,
+            80,
+            300,
+            200,
+            450,
+            187.5,
+            120,
+            80,
+            200
+          ],
+          "percent": [
+            61.66666666666667,
+            30,
+            38.333333333333336,
+            65.21739130434783,
+            10.434782608695652,
+            6.956521739130435,
+            17.391304347826086,
+            25,
+            4,
+            2.666666666666667,
+            6.666666666666667
+          ]
+        }
+      },
+      "actual": {
+        "summary": "You've spent $1150.00 with a savings rate of 61.7%. Your spending increased by 30.0% this month.",
+        "trends": [
+          "Top spending category is foodDining",
+          "Significant increase in spending this month"
+        ],
+        "recommendations": [
+          "Review your top spending categories for optimization opportunities",
+          "Set monthly budgets for each category",
+          "Track expenses regularly to stay on target"
+        ],
+        "alerts": [],
+        "detectedLanguage": {
+          "language": "en",
+          "scores": {
+            "en": 11,
+            "pt": 0,
+            "es": 0,
+            "fr": 0
+          }
+        },
+        "untraced": []
+      },
+      "checks": {
+        "fallback": true,
+        "fallbackSeen": 3,
+        "language": false,
+        "structure": true,
+        "numbersStated": 3,
+        "numbersUntraced": 0
+      },
+      "retries": 0
+    },
+    {
+      "suite": "insights",
+      "id": "fr-run2",
+      "locale": "fr",
+      "pass": false,
+      "input": {
+        "locale": "fr"
+      },
+      "expected": {
+        "language": "fr",
+        "numbersFrom": {
+          "money": [
+            1150,
+            650,
+            500,
+            3000,
+            1850,
+            2350,
+            150,
+            750,
+            120,
+            80,
+            200,
+            400,
+            1030,
+            1070,
+            950,
+            150,
+            150,
+            150,
+            120,
+            80,
+            300,
+            200,
+            450,
+            187.5,
+            120,
+            80,
+            200
+          ],
+          "percent": [
+            61.66666666666667,
+            30,
+            38.333333333333336,
+            65.21739130434783,
+            10.434782608695652,
+            6.956521739130435,
+            17.391304347826086,
+            25,
+            4,
+            2.666666666666667,
+            6.666666666666667
+          ]
+        }
+      },
+      "actual": {
+        "summary": "You've spent $1150.00 with a savings rate of 61.7%. Your spending increased by 30.0% this month.",
+        "trends": [
+          "Top spending category is foodDining",
+          "Significant increase in spending this month"
+        ],
+        "recommendations": [
+          "Review your top spending categories for optimization opportunities",
+          "Set monthly budgets for each category",
+          "Track expenses regularly to stay on target"
+        ],
+        "alerts": [],
+        "detectedLanguage": {
+          "language": "en",
+          "scores": {
+            "en": 11,
+            "pt": 0,
+            "es": 0,
+            "fr": 0
+          }
+        },
+        "untraced": []
+      },
+      "checks": {
+        "fallback": true,
+        "fallbackSeen": 3,
+        "language": false,
+        "structure": true,
+        "numbersStated": 3,
+        "numbersUntraced": 0
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "en-groceries-yesterday",
+      "locale": "en",
+      "pass": false,
+      "input": "Spent $45.50 on groceries yesterday",
+      "expected": {
+        "amount": 45.5,
+        "category": "foodDining",
+        "date": "2026-10-28"
+      },
+      "actual": {
+        "amount": 45.5,
+        "description": "Spent $45.50 on groceries yesterday",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": true,
+        "category": false,
+        "date": false,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "en-uber",
+      "locale": "en",
+      "pass": false,
+      "input": "Uber ride to the airport for $32",
+      "expected": {
+        "amount": 32,
+        "category": "transportation",
+        "date": "2026-10-29"
+      },
+      "actual": {
+        "amount": 32,
+        "description": "Uber ride to the airport for $32",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": true,
+        "category": false,
+        "date": true,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "en-coffee-morning",
+      "locale": "en",
+      "pass": false,
+      "input": "Coffee at Starbucks $6.50 this morning",
+      "expected": {
+        "amount": 6.5,
+        "category": "foodDining",
+        "date": "2026-10-29"
+      },
+      "actual": {
+        "amount": 6.5,
+        "description": "Coffee at Starbucks $6.50 this morning",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": true,
+        "category": false,
+        "date": true,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "en-bill-thousands",
+      "locale": "en",
+      "pass": false,
+      "input": "Paid the $1,250.00 electricity and water bill",
+      "expected": {
+        "amount": 1250,
+        "category": "billsUtilities",
+        "date": "2026-10-29"
+      },
+      "actual": {
+        "amount": 1,
+        "description": "Paid the $1,250.00 electricity and water bill",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": false,
+        "category": false,
+        "date": true,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "en-words",
+      "locale": "en",
+      "pass": false,
+      "input": "Movie tickets, twenty dollars",
+      "expected": {
+        "amount": 20,
+        "category": "entertainment",
+        "date": "2026-10-29"
+      },
+      "actual": {
+        "amount": null,
+        "description": "Movie tickets, twenty dollars",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": false,
+        "category": false,
+        "date": true,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "pt-groceries-comma",
+      "locale": "pt",
+      "pass": false,
+      "input": "Gastei 12,50 € no supermercado ontem",
+      "expected": {
+        "amount": 12.5,
+        "category": "foodDining",
+        "date": "2026-10-28"
+      },
+      "actual": {
+        "amount": 12,
+        "description": "Gastei 12,50 € no supermercado ontem",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": false,
+        "category": false,
+        "date": false,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "pt-flight-thousands",
+      "locale": "pt",
+      "pass": false,
+      "input": "Bilhete de avião para o Porto, 1.250,00 €",
+      "expected": {
+        "amount": 1250,
+        "category": "travel",
+        "date": "2026-10-29"
+      },
+      "actual": {
+        "amount": 1.25,
+        "description": "Bilhete de avião para o Porto, 1.250,00 €",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": false,
+        "category": false,
+        "date": true,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "pt-pharmacy",
+      "locale": "pt",
+      "pass": false,
+      "input": "Farmácia 8,90 €",
+      "expected": {
+        "amount": 8.9,
+        "category": "healthcare",
+        "date": "2026-10-29"
+      },
+      "actual": {
+        "amount": 8,
+        "description": "Farmácia 8,90 €",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": false,
+        "category": false,
+        "date": true,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "es-fuel-yesterday",
+      "locale": "es",
+      "pass": false,
+      "input": "Gasté 30 euros en gasolina ayer",
+      "expected": {
+        "amount": 30,
+        "category": "transportation",
+        "date": "2026-10-28"
+      },
+      "actual": {
+        "amount": 30,
+        "description": "Gasté 30 euros en gasolina ayer",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": true,
+        "category": false,
+        "date": false,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "es-dinner-comma",
+      "locale": "es",
+      "pass": false,
+      "input": "Cena con amigos 45,75 €",
+      "expected": {
+        "amount": 45.75,
+        "category": "foodDining",
+        "date": "2026-10-29"
+      },
+      "actual": {
+        "amount": 45,
+        "description": "Cena con amigos 45,75 €",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": false,
+        "category": false,
+        "date": true,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "es-bill-date",
+      "locale": "es",
+      "pass": false,
+      "input": "Factura de la luz 89,99 € el 15 de octubre de 2026",
+      "expected": {
+        "amount": 89.99,
+        "category": "billsUtilities",
+        "date": "2026-10-15"
+      },
+      "actual": {
+        "amount": 89,
+        "description": "Factura de la luz 89,99 € el 15 de octubre de 2026",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": false,
+        "category": false,
+        "date": false,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "fr-groceries-yesterday",
+      "locale": "fr",
+      "pass": false,
+      "input": "Courses au supermarché 54,30 € hier",
+      "expected": {
+        "amount": 54.3,
+        "category": "foodDining",
+        "date": "2026-10-28"
+      },
+      "actual": {
+        "amount": 54,
+        "description": "Courses au supermarché 54,30 € hier",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": false,
+        "category": false,
+        "date": false,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "fr-hotel-space-thousands",
+      "locale": "fr",
+      "pass": false,
+      "input": "Hôtel à Nice, 1 250 €",
+      "expected": {
+        "amount": 1250,
+        "category": "travel",
+        "date": "2026-10-29"
+      },
+      "actual": {
+        "amount": 1,
+        "description": "Hôtel à Nice, 1 250 €",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": false,
+        "category": false,
+        "date": true,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    },
+    {
+      "suite": "parse-expense",
+      "id": "fr-netflix",
+      "locale": "fr",
+      "pass": false,
+      "input": "Abonnement Netflix 13,49 €",
+      "expected": {
+        "amount": 13.49,
+        "category": "entertainment",
+        "date": "2026-10-29"
+      },
+      "actual": {
+        "amount": 13,
+        "description": "Abonnement Netflix 13,49 €",
+        "category": null,
+        "date": "2026-10-29"
+      },
+      "checks": {
+        "amount": false,
+        "category": false,
+        "date": true,
+        "fallback": true,
+        "fallbackSeen": 2
+      },
+      "retries": 0
+    }
+  ]
+}
