@@ -66,7 +66,7 @@ The first two are deterministic and block a PR like any other test. The last two
 ### Contract (`tests/contract`)
 - Every AI endpoint returns `401` without a session, and `400` for a missing, empty, numeric or object input.
 - Response schemas in [`src/schemas.ts`](src/schemas.ts): a category must be one of the 10 keys, a date must be `YYYY-MM-DD`, insights must have exactly the four fields.
-- The rate limit (10 AI requests per minute per user) answers `429` with `X-RateLimit-*` headers.
+- The rate limit (10 AI requests per minute per user) answers `429` with `X-RateLimit-*` headers. The counter lives in memory per server instance, so on a serverless deploy a user can get more than 10 requests through when they land on several instances; the test sends empty requests (counted before validation, no model call) until the 429 arrives instead of expecting it on the 11th.
 
 ### UI with the model mocked (`tests/ui`)
 `page.route` replaces the AI endpoints with canned answers, errors (500) or delayed replies, so the tests are fast, free and never flaky because of the model:

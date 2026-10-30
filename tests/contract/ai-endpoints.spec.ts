@@ -61,21 +61,26 @@ test.describe("Response schemas", () => {
 });
 
 test.describe("Rate limiting", () => {
-  test("the 11th AI request in a minute gets 429 with rate-limit headers", async ({ baseURL }) => {
-    // The limit is 10 per minute, per user and endpoint, kept in memory per server instance.
-    // Requests are sequential so they reach the same warm instance; parallel bursts can be
-    // spread across instances, each with its own counter.
+  test("repeated AI requests get 429 with rate-limit headers", async ({ baseURL }) => {
+    // The limit is 10 per minute, per user and endpoint, but kept in memory per server
+    // instance: requests spread over several instances each meet a fresh counter, so the
+    // 11th request is not reliably the limited one. The test asks until a 429 arrives.
+    // The limit is checked before the body is validated, so an empty body is counted
+    // without calling the model.
     // A dedicated account, so using up its budget doesn't slow down the other tests.
     const user = await loginTestUser(baseURL!, "rate-limit");
     const api = await request.newContext({ baseURL, storageState: user.storageState });
-    const responses = [];
-    for (let i = 0; i < 12; i++) {
-      responses.push(await api.post("/api/ai/categorize", { data: { description: "Coffee", locale: "en" } }));
+    const statuses: number[] = [];
+    let limited;
+    for (let i = 0; i < 50 && !limited; i++) {
+      const res = await api.post("/api/ai/categorize", { data: {} });
+      statuses.push(res.status());
+      if (res.status() === 429) limited = res;
     }
-    const limited = responses.filter((r) => r.status() === 429);
     await api.dispose();
-    expect(limited.length, `statuses: ${responses.map((r) => r.status()).join(", ")}`).toBeGreaterThan(0);
-    expect(limited[0].headers()["x-ratelimit-limit"]).toBe("10");
-    expect(Number(limited[0].headers()["x-ratelimit-reset"])).toBeGreaterThan(0);
+    expect(limited, `no 429 in ${statuses.length} requests: ${statuses.join(", ")}`).toBeDefined();
+    expect(limited!.headers()["x-ratelimit-limit"]).toBe("10");
+    expect(limited!.headers()["x-ratelimit-remaining"]).toBe("0");
+    expect(Number(limited!.headers()["x-ratelimit-reset"])).toBeGreaterThan(0);
   });
 });
